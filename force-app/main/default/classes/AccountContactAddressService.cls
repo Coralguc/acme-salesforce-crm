@@ -47,7 +47,7 @@ public static void onAfterUpdate(AccountTriggerContext Context)
     
     
     
-    for(Account acc:accList)
+    for(Account acc:accountList)
         
     {
         
