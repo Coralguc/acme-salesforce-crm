@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title = "Notifications">
+        <div class = "slds-m-var-around-medium">
+
+            <lightning-button
+                variant = "success"
+                label= "Success"
+                onclick = {showToast}
+                class = "slds-p-around-medium">
+            </lightning-button>
+
+            <lightning-button 
+                variant = "destructive"
+                label= "Error"
+                onclick = {showToast}
+                class = "slds-p-around-medium">
+            </lightning-button>
+
+                 <lightning-button
+                variant = "info"
+                label= "Info"
+                onclick = {showToast}
+                class = "slds-p-around-medium">
+            </lightning-button>
+      
+                 <lightning-button
+                variant = "brand"
+                label= "Warning"
+                onclick = {showToast}
+                 class = "slds-p-around-medium">
+            </lightning-button>
+
+
+            
+
+
+        </div>
+
+
+    </lightning-card>
+</template>

@@ -1,0 +1,49 @@
+<template>
+
+<lightning-card 
+        title = "LWC Reference" 
+        icon-name = "standard:contact">
+   
+    <div class = "slds-p-horizontal_small" >   
+        <lightning-input 
+            label = "Enter Name" 
+            value = {name} 
+            onchange = {handleNameChange}>
+        </lightning-input>
+
+        <lightning-input 
+            lwc:ref="ageRefInput"
+            label = "Age" 
+            type = number 
+            onchange = {handleAgeChange}>
+            
+        </lightning-input>
+ 
+
+    <div class = "slds-p-around-medium slds-box" 
+        >
+
+        <lightning-button 
+            
+            label = "Check Eligibility" 
+            onclick = {checkEligibility} >
+        </lightning-button>
+    </div>
+    <div lwc:ref="refEligible"> </div>
+   <p class = "slds-m-top_small"> Hello {name}!</p> 
+
+    <div class = "slds-p-around-high">
+         
+       <lightning-button 
+            lwc:ref="refJoinDriving"
+            label = "Join Driving School"
+            onclick ={joinDrivingSchool}
+            disabled = true>
+        </lightning-button>
+      
+    </div>
+    
+
+    </div>   
+</lightning-card>
+</template>

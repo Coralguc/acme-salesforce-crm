@@ -5,12 +5,12 @@
 public class DepartmentTriggerHandler {
     
     
-    List<Department__c> triggerNew;
-    List<Department__c> triggerOld;
-    Map<Id,Department__c> triggerNewMap;
-    Map<Id,Department__c> triggerOldMap;
+    private List<Department__c> triggerNew;
+    private List<Department__c> triggerOld;
+    private Map<Id,Department__c> triggerNewMap;
+    private Map<Id,Department__c> triggerOldMap;
     
-    Static List<Employee__C> empList = new List<Employee__C>();
+    Static List<Employee__c> empList = new List<Employee__c>();
     
     public DepartmentTriggerHandler ()
     {
@@ -58,9 +58,9 @@ public class DepartmentTriggerHandler {
     public void onBeforeDelete()
     {
       //Collect all child records
-      //Set<Id> deptIds = triggerOldMap.keySet();
+      Set<Id> deptIds = triggerOldMap.keySet();
       empList = [Select Id, Name from Employee__c
-                Where Department__c IN :triggerOld];          
+                Where Department__c IN :deptIds];          
         
     }
     public void onAfterDelete()

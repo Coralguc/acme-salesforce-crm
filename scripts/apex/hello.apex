@@ -14,3 +14,5 @@ System.debug('Hello Salesforce! from VSCODE');
 OppRecordCreation ObjOppRecordCreation = new OppRecordCreation();
 ObjOppRecordCreation.OppRecordCreation();
 
+
+system.enqueueJob(new QueuableAccountDiscount('Hot'));

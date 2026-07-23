@@ -1,0 +1,87 @@
+<template>
+<lightning-card title="Conditional Rendering ***** Template Looping">
+
+<div class="slds-p-around_medium">
+<b>Choose your Interest : </b>
+<div> 
+<lightning-input type="checkbox" class = "Shopping" label="Shopping" 
+    onchange={handleShoppingChange}>
+</lightning-input>
+</div>
+
+<div> 
+<lightning-input type="checkbox" class = "Reading" label="Reading" 
+            onchange={handleReadingChange}>
+</lightning-input>
+</div>
+
+</div>
+
+<!-- Conditional Content -->
+<template lwc:if={isShoppingChosen}>
+<lightning-card title = "Shopping Interest">
+
+<div class="slds-p-around_medium slds-box">
+<ul>
+    <li> <a href="https://www.amazon.com/" target="_blank">Amazon❤️</a></li>
+    <li> <a href="https://www.flipkart.com/" target="_blank">Flipkart🐬</a></li>
+    <li> <a href="https://www.croma.com/" target="_blank">Croma😎</a></li>
+</ul>
+</div>
+    
+</lightning-card>
+</template>
+
+<template lwc:elseif={isReadingChosen}>
+<lightning-card title = "Reading Interest">
+
+<div class="slds-p-around_medium slds-box">
+<ul>
+    <li> <a href="https://www.goodreads.com//" target="_blank">goodreads❤️</a></li>
+    <li> <a href="https://www.gutenberg.org//" target="_blank">Gutenberg Library🐬</a></li>
+    <li> <a href="https://storyweaver.org.in/en/" target="_blank">StoryWeaver😎</a></li>
+</ul>
+</div>
+
+</lightning-card>
+</template>
+<template lwc:else>
+<b>Choose your Interest to see the links</b>
+</template>
+
+
+
+
+
+<lightning-card title=" ***** Template Looping  *****">
+<div class="slds-p-around_medium slds-box">
+
+<template lwc:if={isArrayNotEmpty}>
+
+        
+        <template for:each={courses} for:item="courseItem">
+            <div class = "b" key={courseId}>
+                {courseItem}
+            </div>
+        </template>
+</template>
+<template lwc:else>
+    <b>Enter the courses you are interested in</b>
+</template>
+
+    <div>
+    <lightning-input type="text" class = "Courses" label="Courses" 
+            onchange={handleCoursesChange}>
+    </lightning-input>`
+  </div>
+
+    <div>
+            <lightning-button label = "Add Course" onclick={handleAddNewCourse}>
+        </lightning-button>
+    </div>
+
+    
+</div>
+</lightning-card>   
+</lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_revenue_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Type , &quot;Customer - Direct&quot;),  ISBLANK(AnnualRevenue) 
+ )</errorConditionFormula>
+    <errorDisplayField>AnnualRevenue</errorDisplayField>
+    <errorMessage>For Type Customer Direct, Please enter Annual Revenue</errorMessage>
+</ValidationRule>

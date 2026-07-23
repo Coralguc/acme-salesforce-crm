@@ -1,0 +1,39 @@
+<template>
+
+    <lightning-card title="Object Metadata Information">
+
+        <template if:true={objectInfo}>
+            <div class="slds-p-around_medium">
+
+                <p><b>Object :</b> {objectApiName}</p>
+                <p><b>Total Custom Fields :</b> {customFieldCount}</p>
+                <p><b>Total Required Fields :</b> {requiredFieldCount}</p>
+                <p><b>Total Record Types :</b> {recordTypeCount}</p>
+
+                <br/>
+
+                <h3><b>Record Type Names</b></h3>
+                <template for:each={recordTypeNames} for:item="rt">
+                    <div key={rt}>{rt}</div>
+                </template>
+
+                <br/>
+
+                <h3><b>Field Names</b></h3>
+                <template for:each={fieldNames} for:item="field">
+                    <div key={field}>{field}</div>
+                </template>
+
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                {error}
+            </div>
+        </template>
+
+    </lightning-card>
+
+    
+</template>

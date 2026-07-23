@@ -4,5 +4,7 @@
     "**/bower_components": true,
     "**/.sf": true,
     "**/.sfdx": true
-  }
+  },
+  "salesforce.agentforceVibesAutocomplete.enableAutocompletionsSleepModeMonitoring": false,
+  "salesforce.agentforceVibesAutocomplete.enableAutocompletions": true
 }

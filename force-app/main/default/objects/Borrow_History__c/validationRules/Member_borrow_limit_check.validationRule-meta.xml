@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Member_borrow_limit_check</fullName>
+    <active>true</active>
+    <description>Members borrowing limit is verified</description>
+    <errorConditionFormula>Member_Name__r.Active_borrow_count__c &gt;= Member_Name__r.Max_books_allowed__c</errorConditionFormula>
+    <errorMessage>Member has reached the maximum number of allowed borrowed books.</errorMessage>
+</ValidationRule>

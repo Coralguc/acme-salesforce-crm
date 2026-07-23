@@ -1,0 +1,111 @@
+<template>
+<lightning-card title="Contact Create and update"
+>
+<div class = "slds-p-around-medium">
+<lightning-record-edit-form
+    object-api-name = {objectApiName}
+    record-id={recordId}
+    onsubmit = {handleSubmit}
+    onsuccess= {handleSuccess}
+    onerror = {handleError}
+    lwc:ref = "myForm">
+    
+            
+    <div class = "slds-grid slds-gutters">
+
+        <div class = "slds-col">
+            <lightning-input-field
+                field-name = {field.Title}>
+            </lightning-input-field>   
+            <lightning-input-field
+                field-name = {field.LastName}>
+            </lightning-input-field>    
+            <lightning-input-field
+                field-name = {field.AccountId}>
+            </lightning-input-field> 
+        </div>
+
+        <div class="slds-col">
+            <lightning-input-field
+                field-name = {field.Email}>
+            </lightning-input-field>   
+            <lightning-input-field
+                field-name = {field.Birthdate}>
+            </lightning-input-field> 
+            <!-- <div class="slds-align_absolute-center">  -->
+                <lightning-input-field
+                    field-name = {field.Description}>
+                </lightning-input-field>   
+                <!-- </div> -->
+            
+        </div>  
+        <div class="slds-col">
+            <lightning-input
+                type="toggle"
+                label = "Show Address"
+                onchange = {handleAddress}>
+            </lightning-input>
+            <template if:true={showAddress}>
+            <div>
+            <!-- <lightning-output-field
+                field-name ={field.MailingAddress}>
+            </lightning-output-field> -->
+            
+                <lightning-input-field
+                    field-name={field.MailingStreet}>
+                </lightning-input-field>
+
+                <lightning-input-field
+                    field-name={field.MailingCity}>
+                </lightning-input-field>
+
+                <lightning-input-field
+                    field-name={field.MailingState}>
+                </lightning-input-field>
+
+                <lightning-input-field
+                    field-name={field.MailingPostalCode}>
+                </lightning-input-field>
+
+                <lightning-input-field
+                    field-name={field.MailingCountry}>
+                </lightning-input-field>
+
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div class="slds-align_absolute-center">
+        <lightning-button
+            variant = "brand"
+            label="Save"
+            type="submit">
+
+        </lightning-button>
+        <div class = "slds-var-m-left-small">
+            <lightning-button
+            variant = "neutral"
+            label="Clear"
+            onclick = {handleClear}>
+            
+        </lightning-button>
+        </div>
+
+    <div class = "slds-var-m-left-small">
+            <lightning-button
+            variant = "neutral"
+            label="Cancel"
+            class = "slds-var-p-around-medium"
+            onclick = {handleCancel}>
+            </lightning-button>
+    </div>
+    </div>
+            
+</lightning-record-edit-form>
+
+</div>
+
+</lightning-card>
+
+</template>

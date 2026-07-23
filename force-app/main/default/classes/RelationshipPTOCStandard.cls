@@ -19,7 +19,7 @@ public class RelationshipPTOCStandard {
     }
      public static void getAccountwithDepartments()
      {
-         List<Account> accountList = [Select Name, 
+         List<Account> accountList = [Select Name,
                                      (Select Name, Location__c from Departments__r)from Account];
          for(Account accRecord:accountList)
          {

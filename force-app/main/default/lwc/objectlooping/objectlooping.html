@@ -1,0 +1,19 @@
+<template>
+<lightning-card title="Object Looping">
+    <div class="slds-p-around_small slds-small-box">
+
+        <!-- Student Object Looping -->
+        <template for:each={Students} for:item="studentObj" for:index="index">
+            <div  key={studentObj.index} class="slds-m-bottom_small">  
+
+                <div class = "slds-box" >
+                
+                    <div>Index: {index} - Name: {studentObj.Name} - Age: {studentObj.Age} <br>
+                       Grade: {studentObj.Grade}</div>
+                </div>
+            </div>
+                            
+        </template>
+    </div>
+</lightning-card>
+</template>

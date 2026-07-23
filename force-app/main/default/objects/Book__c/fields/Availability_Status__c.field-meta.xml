@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Availability_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Available_Copies__c = 0,
+ &quot;Not Available&quot;, 
+ if( Available_Copies__c &lt;= 2,
+  &quot;Limited&quot;,
+  &quot;Available&quot;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Availability Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

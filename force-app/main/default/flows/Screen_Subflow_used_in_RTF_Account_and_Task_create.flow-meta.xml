@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Final_Revenue</name>
+        <label>Final Revenue</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varC_annualRevenue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varF_FinalRevenue</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <environments>Default</environments>
+    <formulas>
+        <name>varF_FinalRevenue</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+{!varT_Rating} = &quot;Hot&quot;, 
+{!varC_annualRevenue} - ( {!varC_annualRevenue} * (VALUE( {!$Label.Direct_Hot}) /100 ) ),
+IF(
+{!varT_Rating} = &quot;Warm&quot;, 
+{!varC_annualRevenue} - ({!varC_annualRevenue} * ( VALUE({!$Label.Direct_Warm}) /100 ) ),
+{!varC_annualRevenue} - ( {!varC_annualRevenue} * ( VALUE({!$Label.Direct_Cold}) /100 ) )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Screen : Subflow - used in RTF Account and Task create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen : Subflow - used in RTF Account and Task create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Final_Revenue</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varC_annualRevenue</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varC_FinalRevenue</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varT_Rating</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

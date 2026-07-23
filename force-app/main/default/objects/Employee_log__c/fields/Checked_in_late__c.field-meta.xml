@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checked_in_late__c</fullName>
+    <formula>IF(
+
+    Checked_in__c &gt; 
+      
+   DATETIMEVALUE(
+      TEXT( YEAR( DATEVALUE(  Checked_in__c ))) + &quot;-&quot; +
+      TEXT( MONTH( DATEVALUE(  Checked_in__c ))) + &quot;-&quot; + 
+      TEXT( DAY( DATEVALUE(  Checked_in__c ))) + &quot;-&quot;  + &quot;03:30:00&quot;
+   ), 
+   TRUE,
+   FALSE
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Checked in late?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loan_Eligible_date__c</fullName>
+    <formula>DATE ( YEAR( Loan_Maturity_date__c ) + 1,  MONTH( Loan_Maturity_date__c ) ,  DAY( Loan_Maturity_date__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loan Eligible date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

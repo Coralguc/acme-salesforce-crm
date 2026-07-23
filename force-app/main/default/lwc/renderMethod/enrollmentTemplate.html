@@ -1,0 +1,44 @@
+<template>
+     <lightning-card title ="New Enrollment" >
+        <div class = "slds-var-m-around-medium">
+            <lightning-input
+                type="text"
+                label="Enter your name">
+                
+            </lightning-input>
+
+            <lightning-input
+                type="email"
+                label="Enter your email">
+            </lightning-input>
+
+            <lightning-input
+                type="password"
+                label="Create Password">
+                
+            </lightning-input>
+            </div>
+
+            <div class = "slds-var-m-around-medium">
+
+            <lightning-button
+                variant="brand"
+                label= "Enroll"
+                onclick={handleEnrollClick}
+                class = "slds-var-m-around-medium">
+            </lightning-button>
+  
+
+            <lightning-button
+                variant="brand"
+                label= "Back"
+                onclick={handleClick}
+                class = "slds-var-m-around-medium">
+            </lightning-button>
+   
+            </div>
+
+        </lightning-card>
+
+    
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_priority_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ (ISCHANGED ( CustomerPriority__c )),
+ ISPICKVAL( PRIORVALUE( CustomerPriority__c), &quot;HIGH&quot;),
+ NOT( (ISPICKVAL( CustomerPriority__c , &quot;High&quot; ) ))
+)</errorConditionFormula>
+    <errorMessage>A high Priority cannot be changed</errorMessage>
+</ValidationRule>

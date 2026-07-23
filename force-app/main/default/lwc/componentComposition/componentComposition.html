@@ -1,0 +1,40 @@
+<template>
+
+<lightning-card 
+        title="Component Composition" 
+        icon-name="custom:custom63">
+
+<div class="slds-p-horizontal_small">
+   
+<lightning-tabset active-tab-value={activeTab}>
+
+        <lightning-tab 
+                label="Lead Record" 
+                value="leadRecordTab">
+                <c-leadrecord></c-leadrecord>
+
+        </lightning-tab>
+
+        <lightning-tab 
+                label="To-Do List" 
+                value="toDoListTab">
+                <c-to-do-list 
+                        welcome-message = "Update your Todo List" 
+                        to-do-list={toDoArray} 
+                        to-do-objects ={toDoObject}>
+                </c-to-do-list>
+                
+        </lightning-tab>
+
+        <lightning-tab 
+                label="Object Looping" 
+                value="objectLoopingTab">        
+                <c-objectlooping></c-objectlooping> 
+        </lightning-tab>
+
+</lightning-tabset>
+</div>
+
+</lightning-card>
+
+</template>

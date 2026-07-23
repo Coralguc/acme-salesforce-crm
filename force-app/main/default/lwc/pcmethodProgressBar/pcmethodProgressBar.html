@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title = "Progress Bar">
+        <div class = "slds-p-around-medium">
+            <div class = "slds-grid">
+                <lightning-button 
+                    class = "slds-col"
+                    label = "start" 
+                    variant = "success"
+                    onclick = {handleStart}>
+                </lightning-button>
+                <lightning-button 
+                    class = "slds-col"
+                    label = "stop" 
+                    variant = "destructive"
+                    onclick = {handleStop}>
+                </lightning-button>
+                <lightning-button 
+                    class = "slds-col"
+                    label = "Reset" 
+                    variant = "brand"
+                    onclick = {handleReset}>
+                </lightning-button>
+        
+       </div>
+        <c-child-progress-bar
+           lwc:ref = "child">
+        </c-child-progress-bar>
+        </div>
+         
+    </lightning-card>
+    
+</template>

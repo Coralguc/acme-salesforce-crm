@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer__c</fullName>
+    <description>MD relnship to department</description>
+    <label>Dealer</label>
+    <referenceTo>Dealer__c</referenceTo>
+    <relationshipLabel>Retail Stores</relationshipLabel>
+    <relationshipName>Retail_Stores</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

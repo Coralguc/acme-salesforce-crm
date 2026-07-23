@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title = "Update Account Record">
+        <lightning-input 
+            name = "Account Name" 
+            label ="Account Name"
+            value={name}
+            onchange = {handleChange}>
+        </lightning-input>
+         <lightning-input 
+            name = "AnnualRev" 
+            label ="Annual Revenue"
+            value={annualRevenue}
+            onchange = {handleChange}>
+        </lightning-input>
+         <lightning-input 
+            name = "Phone" 
+            label ="Phone"
+            value={phone}
+            onchange = {handleChange}>       
+        </lightning-input>
+        <lightning-button
+            label = "Update"
+            name="Update"
+            variant ="brand" 
+            onclick = {handleUpdate}>
+
+        </lightning-button>
+
+    </lightning-card>
+
+</template>

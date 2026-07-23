@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="PickList Values by recordtype">
+         <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="recordtype"
+                label="Record Type"
+                value={accRecordTypeId}
+                placeholder="Select Record Type"
+                options={recordTypeOptions}
+                onchange={handleRecordTypeChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                name="industry"
+                label="Industry"
+                value={selectedIndustry}
+                placeholder="Select Industry"
+                options={accPicklistVal}
+                onchange={handleIndustryChange}>
+            </lightning-combobox>
+            <template if:true={selectedIndustry}>
+                <p class="slds-m-top_medium">
+                    Selected Industry: {selectedIndustry}
+                </p>
+            </template>
+
+        </div>
+        <!-- <template for:each={accPicklistVal} for:item="industry">
+            <div key = {industry.value}>
+                {industry.label}
+            </div>
+
+        </template> -->
+    </lightning-card>
+    
+</template>

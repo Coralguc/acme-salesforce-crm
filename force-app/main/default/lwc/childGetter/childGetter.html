@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title = "Child getter Setter">
+        <div>
+            {childArray}
+        </div>
+
+            <template for:each={objIphones} for:item="objPhone">
+           
+             <div key = {objPhone.model}>
+                 <strong>
+                {objPhone.name}
+                {objPhone.model}
+                {objPhone.year}
+                {objPhone.sales}
+                </strong>
+                
+            </div>
+         
+            </template>
+         
+    </lightning-card>
+    
+</template>

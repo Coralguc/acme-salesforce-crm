@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_accessories</fullName>
+    <availability>online</availability>
+    <description>Buy travel accessories</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Buy Travel accessories</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://www.samsonite.in/travel-accessories/?cgid=accessories&amp;isLoadedMore=true&amp;start=0&amp;sz=12&amp;useNewPLP=true</url>
+</WebLink>

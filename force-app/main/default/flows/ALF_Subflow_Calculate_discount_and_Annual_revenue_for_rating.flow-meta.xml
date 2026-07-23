@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Final_Discount_Amount</name>
+        <label>Final Discount Amount</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varC_FinaldiscountAmount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varF_FinalDiscountAmount</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>varF_FinalDiscountAmount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+{!varT_Rating} = &quot;Hot&quot;, 
+{!varC_AnnualRevenue} - ( {!varC_AnnualRevenue} * (VALUE( {!$Label.Direct_Hot}) /100 ) ), 
+IF(
+{!varT_Rating} = &quot;Warm&quot;, 
+{!varC_AnnualRevenue} - ({!varC_AnnualRevenue} * ( VALUE({!$Label.Direct_Warm}) /100 ) ),
+{!varC_AnnualRevenue} - ( {!varC_AnnualRevenue} * ( VALUE({!$Label.Direct_Cold}) /100 ) )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>ALF: Subflow : Calculate discount and Annual revenue for rating {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ALF: Subflow : Calculate discount and Annual revenue for rating</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Final_Discount_Amount</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>varC_AnnualRevenue</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varC_FinaldiscountAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varT_Rating</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

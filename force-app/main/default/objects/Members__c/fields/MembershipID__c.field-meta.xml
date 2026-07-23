@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MembershipID__c</fullName>
+    <description>Membership ID</description>
+    <displayFormat>MID-{0000}</displayFormat>
+    <externalId>false</externalId>
+    <label>MembershipID</label>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

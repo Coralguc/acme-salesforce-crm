@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-card title = "get Object info for Account">
+        <div>
+            <template for:each={accountData.childRelationships} for:item="acc">
+             
+                <div key={acc.childObjectApiName}>
+                    FieldName : {acc.fieldName}
+                    RelationshipName : {acc.relationshipName}
+                </div>
+            </template>
+        </div>
+
+    </lightning-card>
+    
+</template>

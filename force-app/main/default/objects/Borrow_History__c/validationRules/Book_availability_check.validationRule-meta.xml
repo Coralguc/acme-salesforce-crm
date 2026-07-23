@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Book_availability_check</fullName>
+    <active>true</active>
+    <description>Books availabity check when borrowed</description>
+    <errorConditionFormula>Book_Name__r.Available_Copies__c   &lt;= 0</errorConditionFormula>
+    <errorMessage>This book is currently unavailable</errorMessage>
+</ValidationRule>

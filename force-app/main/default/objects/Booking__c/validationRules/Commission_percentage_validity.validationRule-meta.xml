@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_percentage_validity</fullName>
+    <active>true</active>
+    <description>accept values upon booking confirmation</description>
+    <errorConditionFormula>IF(
+   NOT(ISNULL(Commision_Percentage__c )),
+ IF((Booking_Confirmation__c  = FALSE),
+TRUE,
+FALSE),
+FALSE
+)</errorConditionFormula>
+    <errorMessage>Booking is not confirmed yet</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Opportunity_Stage_restriction</fullName>
+    <active>true</active>
+    <description>New Opportunity stage cannot be Closed won or Closed Lost</description>
+    <errorConditionFormula>AND(
+ ISNEW(),
+   OR (
+        ISPICKVAL(StageName, &quot;Closed Won&quot;) , 
+        ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+      )
+   )</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>New Opportunity stage cannot be Closed won or Closed Lost</errorMessage>
+</ValidationRule>

@@ -1,0 +1,82 @@
+<template>
+<lightning-card title = "To-Do List" icon-name = "standard:task">
+
+<div class = "slds-p-horizontal_small">
+
+<div> <b> Message from Parent:{welcomeMessage}</b></div>
+        <lightning-input 
+            label = "Add Task" 
+            value = {task} 
+            onchange = {handleChange}>
+        </lightning-input>
+
+    <div class=  "slds-box slds-p-around-medium slds-border_top">
+        <template for:each={toDoList} for:item="todo">
+                <div key={todo.Id}>
+                    {todo}
+                </div>
+        </template>
+    </div> 
+
+    <div class=  "slds-p-around-medium slds-box" >
+        <template for:each={toDoObjects} for:item="todoobj">
+                <div key={todoobj.Id}>
+                    {todoobj.task}
+                    {todoobj.SLA}
+                    {todoobj.Priority}
+
+                </div>
+        </template>
+    </div> 
+
+        <lightning-button 
+                variant = "brand" 
+                label = "Add" 
+                title = "Add" 
+                onclick = {addTask} 
+                class = "slds-m-top_small">
+        </lightning-button>
+</div>
+
+<template if:true = {tasks.length}>
+
+<template for:each = {tasks} for:item = "taskItem"> 
+        <div key = {taskItem.id} 
+            class = "slds-box  slds-m-top_small slds-grid slds-grid_align-spread">
+            <div class = "slds-col">
+                <lightning-input 
+                type = "checkbox" 
+                label = {taskItem.taskName} 
+                checked = {taskItem.completed} 
+                data-id=taskItem.id>
+                onchange ={handleCheckboxChange}
+            
+                
+            </lightning-input>
+            </div>
+            <div class = "slds-col">
+            <lightning-button-icon 
+                icon-name = "utility:delete" 
+                alternative-text = "Delete" 
+                title = "Delete" 
+                data-id = {taskItem.id}
+                onclick = {deleteTask}>
+            
+            </lightning-button-icon>
+            </div>
+        </div>
+    </template>
+</template>
+
+<template if:true = {tasks.length}>
+        <lightning-button 
+            variant = "destructive" 
+            label = "Delete Completed Tasks"
+            title = "Delete Completed Tasks" 
+            onclick = {deleteCompletedTasks} 
+            class = "slds-m-top_small">
+        </lightning-button>
+</template>
+
+</lightning-card> 
+</template>
